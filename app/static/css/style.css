@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+}
+
+body{
+    background-color: #1b1f27;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+/* img{
+    margin-top: 100px;
+} */
+
+.area-login{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    background-color: #181920;
+    padding: 35px;
+    
+    width: 500px;
+    height: 600px;
+    border-radius: 10px;
+    /* max-width:400px;
+    margin-inline: auto; */
+    /* margin-right: auto;
+    margin-left: auto; */
+}
+
+#container form{
+    display: flex;
+    flex-direction: column;
+    width: 100% ;
+}
+
+#container input{
+    margin-top: 10px;
+    background-color: #252a34 ;
+    border: none;
+    height: 45px;
+    outline: none;
+    border-radius: 8px;
+    color: #cbd0f7;
+    padding-left: 10px;
+}
+
+#container img{
+    margin: 25px;
+    height: auto;
+}
+
+input::placeholder{
+    color: #cbd0f7 ;
+    font-size: 14px;
+}
+
+#container form [type="submit"]{
+    display: block;
+    background-color: #4d97ff;
+    color: #fff;
+    font-size: 20px;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#container form [type="submit"]:hover{
+    filter: brightness(1.2);
+    background-color: #4588e5;
+    cursor: pointer;
+}
+
+#container:hover{
+    border: solid 3px #4588e5;
+}
+
+#container input:hover{
+    border: solid 3px #4588e5;
+}
+
+
+h1{
+
+    margin-top: 0px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
