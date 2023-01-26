@@ -18,7 +18,7 @@ chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--no-sandbox")
-
+# driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 
 dado = "https://www.arecreativa.com.br/scratchLogins.json"
 df = pd.read_json(dado)
@@ -37,7 +37,7 @@ def dologin(request):
         if row["login"] == str(user):
 
             
-            navegador = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+            navegador = webdriver.Chrome(executable_path= ('/path/to/chromedriver'))
             navegador.get("https://scratch.mit.edu/accounts/login/")
             time.sleep(3)
             
