@@ -39,7 +39,7 @@ def dologin(request):
             
             navegador = webdriver.Chrome(executable_path= ('/path/to/chromedriver'))
             navegador.get("https://scratch.mit.edu/accounts/login/")
-            time.sleep(3)
+            time.sleep(10)
             
             textLogin = navegador.find_element(By.XPATH, '//*[@id="id_username"]').send_keys(row["login"])
             time.sleep(2)
