@@ -4,15 +4,13 @@ from django.contrib.auth import authenticate
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriver
 from selenium.webdriver.chrome.service import Service
 import pandas as pd
 from selenium.webdriver.chrome.options import Options
 import time
 import os
 from django.views.decorators.csrf import requires_csrf_token
-# def (request):
-#    return (request, '')
+
 
 chrome_options = Options()
 chrome_options.binary_location =  os.environ.get("GOOGLE_CHROME_BIN")
