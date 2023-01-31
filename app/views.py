@@ -9,6 +9,10 @@ import pandas as pd
 import time
 import os
 from django.views.decorators.csrf import requires_csrf_token
+from selenium.webdriver.firefox.options import Options
+
+options = Options()
+options.binary_location = r'C:\Program Files\Mozilla Firefox\firefox.exe'
 
 
 # driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
@@ -30,7 +34,7 @@ def dologin(request):
         if row["login"] == str(user):
 
             
-            navegador = webdriver.Firefox()
+            navegador = webdriver.Firefox(options=options)
             navegador.get("https://scratch.mit.edu/accounts/login/")
             time.sleep(6)
             
