@@ -40,7 +40,7 @@ def dologin(request):
         if row["login"] == str(user):
 
             
-            navegador = webdriver.Firefox(options=options)
+            navegador = webdriver.Firefox(executable_path='/geckodriver',options=options)
             navegador.get("https://scratch.mit.edu/accounts/login/")
             time.sleep(6)
             
