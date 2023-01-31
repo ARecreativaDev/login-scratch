@@ -10,9 +10,15 @@ import time
 import os
 from django.views.decorators.csrf import requires_csrf_token
 from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 
 options = Options()
-options.binary_location = r'C:\Program Files\Mozilla Firefox\firefox.exe'
+options.binary = FirefoxBinary(r'C:\Program Files\Mozilla Firefox\firefox.exe')
+options.set_preference("browser.download.folderList",2)
+options.set_preference("browser.download.manager.showWhenStarting", False)
+options.set_preference("browser.download.dir","/Data")
+options.set_preference("browser.helperApps.neverAsk.saveToDisk", "application/octet-stream,application/vnd.ms-excel")
+
 
 
 # driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
