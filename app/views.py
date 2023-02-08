@@ -27,7 +27,7 @@ def dologin(request):
         if row["login"] == str(user):
 
             
-            navegador = webdriver.Firefox()
+            navegador = webdriver.Chrome()
             navegador.get("https://scratch.mit.edu/accounts/login/")
             time.sleep(3)
             
