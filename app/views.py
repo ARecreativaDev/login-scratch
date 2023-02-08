@@ -9,32 +9,6 @@ import pandas as pd
 import time
 import os
 from django.views.decorators.csrf import requires_csrf_token
-from selenium.webdriver.firefox.options import Options
-from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
-
-def  load_driver():
-	options = webdriver.FirefoxOptions()
-	
-	# enable trace level for debugging 
-	options.log.level = "trace"
-
-	options.add_argument("-remote-debugging-port=9224")
-	options.add_argument("-headless")
-	options.add_argument("-disable-gpu")
-	options.add_argument("-no-sandbox")
-
-	binary = FirefoxBinary(os.environ.get('FIREFOX_BIN'))
-
-	firefox_driver = webdriver.Firefox(
-		firefox_binary=binary,
-		executable_path=os.environ.get('GECKODRIVER_PATH'),
-		options=options)
-
-	return firefox_driver
-
-
-
-# driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
 
 dado = "https://www.arecreativa.com.br/scratchLogins.json"
 df = pd.read_json(dado)
@@ -53,9 +27,9 @@ def dologin(request):
         if row["login"] == str(user):
 
             
-            navegador = load_driver()
+            navegador = webdriver.Firefox()
             navegador.get("https://scratch.mit.edu/accounts/login/")
-            time.sleep(6)
+            time.sleep(3)
             
             textLogin = navegador.find_element(By.XPATH, '//*[@id="id_username"]').send_keys(row["login"])
             time.sleep(2)
