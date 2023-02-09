@@ -10,6 +10,13 @@ import time
 import os
 from django.views.decorators.csrf import requires_csrf_token
 
+firefox_binary = r'C:\Program Files\Mozilla Firefox\firefox.exe'
+
+options = webdriver.FirefoxOptions()
+options.binary = firefox_binary
+
+
+
 dado = "https://www.arecreativa.com.br/scratchLogins.json"
 df = pd.read_json(dado)
 
@@ -27,7 +34,7 @@ def dologin(request):
         if row["login"] == str(user):
 
             
-            navegador = webdriver.Chrome()
+            navegador = webdriver.Firefox(options=options)
             navegador.get("https://scratch.mit.edu/accounts/login/")
             time.sleep(3)
             
